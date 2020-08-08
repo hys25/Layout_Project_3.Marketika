@@ -1,0 +1,26 @@
+@import 'normalize.scss';
+
+@mixin font-lato {
+          font-family: 'Lato', sans-serif;
+}
+@mixin font-montserrat {
+          font-family: 'Montserrat', sans-serif;
+}
+
+$color-white: #ffffff;
+
+body{
+          @include font-lato;
+}
+
+.section-outer {}
+.section-inner {
+          width: 1180px;
+          margin: 0 auto;
+}
+
+.section-header{
+          &-logo {}
+          &-content {}
+          &-wrapper {}
+}
