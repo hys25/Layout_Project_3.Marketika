@@ -9,6 +9,10 @@
 
 $color-white: #ffffff;
 
+*{
+          box-sizing: border-box;
+}
+
 body{
           @include font-lato;
 }
@@ -19,8 +23,113 @@ body{
           margin: 0 auto;
 }
 
+// === header ===
 .section-header{
-          &-logo {}
-          &-content {}
-          &-wrapper {}
+          color: #ffffff;
+          background: url('../img/bg-header.png') no-repeat 50% 50%;
+          background-size: cover;
+          position: relative;
+          .section-inner {
+                    height: 100vh;
+                    position: relative;
+                    z-index: 10;
+                    display: flex;
+                    flex-direction: column;
+          }
+          &::before{
+                    content: '';
+                    position: absolute;
+                    z-index: 5;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(20, 39, 41, .6);
+          }
+          &-logo {
+                    font-weight: bold;
+                    font-size: 24px;
+                    flex-shrink: 1;
+                    padding-top: 35px;
+          }
+          &-content {
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+          }
+          &-wrapper {
+                    margin: 0 auto;
+                    &__title,
+                    &__subtitle {
+                              text-align: center;
+                    }
+
+                    &__title {
+                              font-weight: bold;
+                              font-size: 56px;
+                              line-height: 60px;
+                              margin-bottom: 16px;
+                    }
+                    &__subtitle {
+                              @include font-montserrat;
+
+                              font-size: 18px;
+                              line-height: 32px;
+                              margin: 0 auto 44px;
+                              width: 80%;
+                    }
+                    &__form {
+                              display: flex;
+                              &-input {
+                                        flex: 1;
+                                        padding-right: 40px;
+                                        input{
+                                                  @include font-montserrat;
+                                                  border: none;
+                                                  background: rgba(255, 255, 255, .25);
+                                                  font-size: 16px;
+                                                  margin: 0;
+                                                  padding: 16px 20px;
+                                                  outline: none;
+                                                  border-radius: 4px;
+                                                  color: $color-white;
+                                                  width: 100%;
+
+                                                  &::placeholder {
+                                                            color: $color-white;
+                                                  }
+                                        }
+                              }
+                              &-button {
+                                        button {
+                                                  @include font-montserrat;
+
+                                                  font-size: 16px;
+                                                  outline: none;
+                                                  margin: 0;
+                                                  padding: 0;
+                                                  border: none;
+                                                  padding: 16px 20px;
+                                                  background: linear-gradient(to right, #fe9858, #fe4fa7);
+                                                  border-radius: 4px;
+                                                  color: $color-white;
+                                        }
+                              }
+                    }
+          }
 }
+
+// === promo ===
+.section-promo {}
+
+// === founder ===
+.section-founder {}
+
+// === plans ===
+.section-plans {}
+
+// === free ===
+.section-free {}
+
+// === footer ===
+.section-footer {}

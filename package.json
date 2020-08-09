@@ -1,16 +1,25 @@
 {
-  "name": "layout_9.prime-one",
+  "name": "layout_9.marketika",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
+  "main": "gulpfile.js",
+  "dependencies": {
     "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hys25/Layout_Project_3.Marketika.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hys25/Layout_Project_3.Marketika/issues"
+  },
+  "homepage": "https://github.com/hys25/Layout_Project_3.Marketika#readme"
 }
