@@ -42,6 +42,34 @@ body{
                     color: #6c6c6c;
           }    
 }
+
+@mixin start-button {
+          @include font-montserrat;
+
+          font-size: 16px;
+          outline: none;
+          margin: 0;
+          border: none;
+          padding: 16px 20px;
+          border-radius: 4px;
+          cursor: pointer;
+          text-decoration: none;
+}
+
+     
+.btn-main {
+          @include  start-button;
+          border: none;
+          background: linear-gradient(to right, #fe9858, #fe4fa7);
+          color: $color-white;
+}
+.btn-secondary {
+          @include  start-button;
+          border: 1px solid #414141;
+          background:  $color-white;
+          color: #414141;
+}
+
 // === header ===
 .section-header{
           color: #ffffff;
@@ -119,21 +147,7 @@ body{
                                                   }
                                         }
                               }
-                              &-button {
-                                        button {
-                                                  @include font-montserrat;
-
-                                                  font-size: 16px;
-                                                  outline: none;
-                                                  margin: 0;
-                                                  padding: 0;
-                                                  border: none;
-                                                  padding: 16px 20px;
-                                                  background: linear-gradient(to right, #fe9858, #fe4fa7);
-                                                  border-radius: 4px;
-                                                  color: $color-white;
-                                        }
-                              }
+                              &-button {}
                     }
           }
 }
@@ -182,10 +196,92 @@ body{
 }
 
 // === founder ===
-.section-founder {}
+.section-founder {
+          background-color: #f6fafd;
+          padding-top: 34px;
+          .section-inner {
+                    display: flex;
+          }
+          &__img {
+                    align-self: flex-end;
+          }
+          &__content {
+                    align-self: center;
+                    padding-left: 50px;
+                    &-text {
+                              @include font-montserrat;
+                              font-size: 24px;
+                              line-height: 40px;
+                    }
+                    &-name {
+                              font-size: 24px;
+                              line-height: 49px;
+                              font-weight: bold;
+                    }
+                    &-post {
+                              font-size: 20px;
+                              line-height: 29px;
+                    }
+          }
+}
 
 // === plans ===
-.section-plans {}
+.section-plans {
+          padding-top: 120px;
+          padding-bottom: 120px;
+          text-align: center;
+          &__title {
+                    font-size: 36px;
+                    line-height: 51px;
+                    font-weight: bold;
+          }
+          &__subtitle {
+                    font-size: 16px;
+                    line-height: 28px;
+                    font-weight: 300;
+                    margin: 0 auto 50px;
+                    width: 50%;
+          }
+          &__list {
+                    display: flex;
+                    justify-content: center;
+                    &-item {
+                              flex-basis: 370px;
+                              padding: 60px 45px;
+                              &_title {
+                                        font-size: 14px;
+                                        line-height: 17px;
+                                        font-weight: bold;
+                                        text-transform: uppercase;
+                                        margin-bottom: 26px;
+                              }
+                              &_price {
+                                        margin-bottom: 26px;
+                                        .prefix {
+                                                  color: #fe4fa7;
+                                                  font-size: 72px;
+                                                  line-height: 86px;
+                                                  font-weight: bold;
+                                        }
+                                        .postfix {
+                                                  font-size: 14px;
+                                                  line-height: 17px;
+                                                  font-weight: bold;
+                                        }
+                              }
+                              &_description {
+                                        margin-bottom: 26px;
+                                        font-size: 16px;
+                                        line-height: 28px;
+                                        font-weight: 300;
+                              }
+                              &_button {}
+                              &.active {
+                                        background-color: #f6fafd;
+                              }
+                    }
+          }
+}
 
 // === free ===
 .section-free {}
