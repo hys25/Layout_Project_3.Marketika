@@ -12,7 +12,7 @@ $screen-md: 768px;
 $screen-lg: 992px;
 $screen-xl: 1200px;
 
-
+$screen-md-xs: 575px;
 $screen-md-max: 767px;
 $screen-lg-max: 991px;
 $screen-xl-max: 1199px;
@@ -239,14 +239,13 @@ h1, h2{
                               padding-right: 0;
                     }
           }
-          @media_screen (max-width: $screen-md-min) {
+          @media_screen (min-width: $screen-md-min) {
                     }
                     &__content {
                               padding-right: 90px;
                     }
           }
 }
-
 .section-promo-2 {
           display: flex;
           padding-top: 86px;
@@ -254,10 +253,19 @@ h1, h2{
           border-top: 1px solid $color-btn-border;
           text-align: center;
           
-          .description-item + .description-item {
-                    margin-left: 40px;
-          }
           
+          @media (min-width: $screen-sm) {
+                    .description-item + .description-item {
+                              margin-left: 40px;
+                    }
+          }
+          @media (max-width: $screen-xs-max) {
+                    flex-direction: column;
+
+                    .description-item + .description-item {
+                              margin-top: 40px;
+                    }
+          }
 }
 
 // === founder ===
@@ -268,13 +276,11 @@ h1, h2{
                     display: flex;
           }
           &__img {
-                    align-self: flex-end;
+                    img {
+                              max-width: 100%;
+                    }
           }
           &__content {
-                    align-self: center;
-                    padding-left: 50px;
-                    margin-top: 0;
-                    margin-bottom: 0;
                     &-text {
                               @include font-montserrat;
                               font-size: 24px;
@@ -289,6 +295,24 @@ h1, h2{
                               font-size: 20px;
                               line-height: 29px;
                     }
+          }
+          
+          media  (max-width: $screen-xs-max) {
+                    .section-inner{
+                              flex-direction: column;
+                    }
+                    &__content {
+                              order: -1;
+                              margin-bottom: 20px;
+                    }
+          } 
+          media  (min-width: $screen-xs-sm){
+                    &__img {
+                              align-self: flex-end;
+                    }
+                    &__content {
+                              align-self: center;
+                              padding-left: 50px;
           }
 }
 
@@ -306,7 +330,7 @@ h1, h2{
                     font-size: 16px;
                     line-height: 28px;
                     font-weight: 300;
-                    margin: 0 auto 50px;
+                    margin: 0 auto 80px;
                     width: 50%;
           }
           &__list {
@@ -347,6 +371,17 @@ h1, h2{
                                         background-color: $color-bg-card;
                               }
                     }
+                    @media (max-width: $screen-xs-max) {
+                              flex-direction: column;
+                    }
+          }
+          
+          @media (min-width: $screen-xs-sm) {
+                    &__subtitle {
+                              width: 50%;
+                              margin-right: auto;
+                              margin-left: auto;
+                    }
           }
 }
 
@@ -372,8 +407,10 @@ h1, h2{
                     width: 50%;
                     margin: 0 auto;
           }
-          &__button {
-                    padding-top: 20px;
+         @media (min-width: $screen-lg) {
+                    &__description {
+                              width: 50%;
+                    }
           }
 }
 
@@ -395,9 +432,6 @@ h1, h2{
                     padding: 0;
                     list-style: none;
                     li {
-                              & +li {
-                                        margin-left: 60px;
-                              }
                               a {
                                         font-size: 14px;
                                         line-height: 20px;
@@ -412,8 +446,24 @@ h1, h2{
                                                   color: $color-pink;
                                         }
                               }
+                              @media (max-width: $screen-xs-max) {
+                                        flex-direction: column;
+                                        text-align: center;
+                                        li {
+                                                  & +li {
+                                                            margin-top: 10px;
+                                                  }
+                                        }
+                              }
+                              @media (max-width: $screen-sm) {
+                                        li {
+                                                  & +li {
+                                                            margin-left: 60px;
+                                                  }
+                                        }
+                              }
                     }
-          }
+          } 
           &__copyrighd_and_links {
                     @include font-montserrat;
                     display: flex;
@@ -422,6 +472,16 @@ h1, h2{
                     line-height: 18px;
                     width: 60%;
                     margin: 0 auto;
+
+                    @media (min-width: $screen-xl) {
+                              &__description {
+                                        width: 60%;
+                                        margin: 0 auto;
+                              }
+                    }
+                    @media (max-width: $screen-xs-max) {
+                              flex-direction: column;
+                    }
           }
 }
 .helper-link {
@@ -441,5 +501,12 @@ h1, h2{
                                         text-decoration: underline;
                               }
                     }
+          }
+          @media (max-width: $screen-xs-max) {
+                    display: inline-flex;
+                    margin-top: 2px;
+          }
+          @media (min-width: $screen-xs-sm) {
+                    display: flex;
           }
 }
